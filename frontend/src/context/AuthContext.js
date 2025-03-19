@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
     useEffect(() => {
         const checkAuth = async () => {
             try {
-                const { data } = await axios.get("http://localhost:5000/api/auth/me", { withCredentials: true });
+                const { data } = await axios.get("https://expensetrackerbackend-pied.vercel.app/api/auth/me", { withCredentials: true });
                 setUser(data);
             } catch (error) {
                 setUser(null);
@@ -43,7 +43,7 @@ export const AuthProvider = ({ children }) => {
 
     const handleLogout = async () => {
         try {
-            await axios.post("http://localhost:5000/api/auth/logout", {}, { withCredentials: true });
+            await axios.post("https://expensetrackerbackend-pied.vercel.app/api/auth/logout", {}, { withCredentials: true });
             setUser(null);
         } catch (error) {
             console.error("Logout failed", error);

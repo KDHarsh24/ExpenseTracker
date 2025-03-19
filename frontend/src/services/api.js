@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-    baseURL: "http://localhost:5000/api",
+    baseURL: "https://expensetrackerbackend-pied.vercel.app",
     withCredentials: true,  // To handle HTTP-only cookies
 });
 
