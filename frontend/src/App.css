@@ -1,0 +1,439 @@
+/* Global Styles */
+body , #root{
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Shared Auth Container */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* --------- LOGIN PAGE STYLING --------- */
+.login-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+  width: 350px;
+}
+
+/* Login Title */
+.auth-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 10px;
+}
+
+/* --------- REGISTER PAGE STYLING --------- */
+.register-card {
+  background: linear-gradient(135deg, #ff9966, #ff5e62);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: slideIn 1s ease-in-out;
+  width: 400px;
+}
+
+/* Register Title */
+.register-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 10px;
+}
+
+/* Form Input Fields */
+.input-group {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 90%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+input:focus {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/* Buttons */
+.auth-button {
+  width: 100%;
+  padding: 12px;
+  background: #ff9800;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-button:hover {
+  background: #e68900;
+  transform: scale(1.05);
+}
+
+/* Register / Login Navigation Link */
+.auth-text {
+  color: #fff;
+  margin-top: 10px;
+}
+
+.auth-link {
+  color: #ffeb3b;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.auth-link:hover {
+  color: #ffcc00;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+      opacity: 0;
+      transform: translateX(50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+/* Dashboard Container */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logout-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.logout-button:hover {
+  background-color: #d43838;
+}
+
+/* Dashboard Content */
+.dashboard-content {
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+
+/* Dashboard Cards */
+.dashboard-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 📜 Expense List */
+.expense-list-container {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  height: 250px;
+}
+
+/* 📈 Right Panel: Insights */
+.right-panel {
+  flex: 0.8;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 900px) {
+  .dashboard-content {
+      flex-direction: column;
+      align-items: center;
+  }
+  .right-panel {
+      width: 100%;
+  }
+}
+
+/* 🔥 Smooth Fade-in Animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+/* 🌟 Expense Form - Container */
+.expense-form-container {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  animation: slideIn 1s ease-in-out;
+}
+
+/* 🔥 Continuous Moving Background */
+.expense-form-container::before {
+  content: "";
+  width: 240%;
+  height: 200%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+  animation: movingBackground 5s infinite linear;
+  z-index: 0;
+}
+
+/* 🎯 Form Title */
+.expense-form-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+  color: black;
+}
+
+/* ✏️ Input Fields */
+.input-group {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: black;
+  background: rgba(255, 255, 255, 0.1);
+  outline: none;
+  transition: 0.3s ease-in-out;
+}
+
+/* 🖱️ Input Field - Hover & Focus */
+.input-group input:hover,
+.input-group input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* 🚀 Animated Submit Button */
+.expense-submit-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, #ff7eb3, #ff758c);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.expense-submit-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: 0.3s ease-in-out;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.expense-submit-button:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* 🌊 Animations */
+@keyframes slideIn {
+  from {
+      transform: translateY(-10px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes movingBackground {
+  0% {
+      transform: rotate(0deg) translate(0, 0);
+  }
+  100% {
+      transform: rotate(360deg) translate(0, 0);
+  }
+}
+.expense-list-container {
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.expense-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.edit-button, .delete-button, .save-button, .cancel-button {
+  margin-left: 10px;
+  cursor: pointer;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.edit-button { background: #ffc107; color: black; }
+.delete-button { background: #dc3545; color: white; }
+.save-button { background: #28a745; color: white; }
+.cancel-button { background: #6c757d; color: white; }
+/* Blur effect when modal is open */
+.blur-background {
+  filter: blur(3px);
+  pointer-events: none;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal Box */
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 300px;
+}
+
+/* Modal Buttons */
+.modal-buttons {
+  margin-top: 10px;
+}
+
+.save-button {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.cancel-button {
+  background-color: #dc3545;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
