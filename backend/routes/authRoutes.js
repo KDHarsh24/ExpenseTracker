@@ -59,6 +59,7 @@ router.post("/logout", (req, res) => {
 // Get user info (check auth status)
 router.get("/me", protect, async (req, res) => {
     try {
+        res.json({ user: "Harsh" });
         const db = getDB();
         const user = await db.collection("users").findOne({ _id: new ObjectId(req.user.id) });
 

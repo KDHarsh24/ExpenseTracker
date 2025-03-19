@@ -13,14 +13,23 @@ const app = express();
 
 app.use(
     cors({
-      origin: "https://expensetracker-wine-rho.vercel.app", // Your frontend URL
-      credentials: true, // If using cookies or authentication
+      origin: "https://expensetracker-wine-rho.vercel.app", // Frontend URL
+      credentials: true, // Allow cookies/auth headers
+      methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed methods
+      allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
     })
   );
-app.use(express.json());
+  
+  // Handle preflight requests properly
+  app.options("*", cors());
+  
+  // Middleware
+  app.use(express.json());
+  
+  // Sample route
 app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/expenses", expenseRoutes);
-
+app.use("/", console.log('hello'));
 app.listen(5000, () => console.log("Server running on port 5000"));
