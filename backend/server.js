@@ -12,18 +12,21 @@ connectDB();
 const app = express();
 
 app.use(cors({
-    origin: 'https://expensetracker-wine-rho.vercel.app',
-    credentials: true, // Required for cookies or authentication headers
+    origin: '*', // Allows requests from any origin
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true, // Allow cookies/auth headers
   }));
   
-  // OR, to allow multiple origins dynamically:
+  // OR, using manual headers:
   app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "https://expensetracker-wine-rho.vercel.app");
+    res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
     res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
     res.header("Access-Control-Allow-Credentials", "true");
+  
     if (req.method === "OPTIONS") {
-      return res.status(200).end();
+      return res.status(200).end(); // Respond to preflight request
     }
     next();
   });
