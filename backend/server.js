@@ -11,8 +11,12 @@ const expenseRoutes = require("./routes/expenseRoutes");
 connectDB();
 const app = express();
 
-app.use(cors());
-  
+app.use(
+    cors({
+      origin: "https://expensetracker-wine-rho.vercel.app", // Your frontend URL
+      credentials: true, // If using cookies or authentication
+    })
+  );
 app.use(express.json());
 app.use(cookieParser());
 
